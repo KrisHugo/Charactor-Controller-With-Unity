@@ -16,6 +16,7 @@ public abstract class IUserInput : MonoBehaviour {
     public float Dmag;
     public Vector3 Dvec;
     public bool run;
+    public bool jump;
     public bool attack;
     public bool reload;
     public bool scope;

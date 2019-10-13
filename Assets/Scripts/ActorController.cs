@@ -90,6 +90,7 @@ public class ActorController : MonoBehaviour
                 canAttack = WeaponOn();
             }
         }
+
         //属性判断后对状态机的操作:
         SetWeaponLayerWeight(canAttack);
         //按键控制:
@@ -122,6 +123,11 @@ public class ActorController : MonoBehaviour
                 {
                     wc.SetTrigger("Fire");
                 }
+            }
+
+            if (userInput.jump)
+            {
+                modelAnim.SetTrigger("Jump");
             }
         }
 

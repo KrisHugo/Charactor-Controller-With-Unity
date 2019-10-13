@@ -93,6 +93,7 @@ public class KeyBoardInput : IUserInput
         attack = btnG.OnPressed;
         scope = btnH.IsPressing;
         run = btnA.IsPressing;
+        jump = btnB.OnPressed;
         rt = btnE.OnPressed;
         lt = btnF.OnPressed;
         rb = btnG.OnPressed;
