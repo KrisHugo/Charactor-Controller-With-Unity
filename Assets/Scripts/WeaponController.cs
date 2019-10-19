@@ -7,12 +7,14 @@ public class WeaponController : MonoBehaviour
     public WeaponManager wm;
     public GameObject weapon;
     private Animator weaponAnim;
-    [SerializeField]private AudioClip fire;
+    private AudioSource weaponSource;
+    [SerializeField]private AudioEventReactor fireAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         weaponAnim = weapon.GetComponent<Animator>();
+        weaponSource = weapon.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,17 +22,15 @@ public class WeaponController : MonoBehaviour
     {
         
     }
-
-    public AudioClip FireClip()
+    
+    public void FireOneShot()
     {
-        if(fire != null)
-        {
-            return fire;
-        }
-        else
-        {
-            return null; //应该返回一个写死的默认音效，但是这个音效应该交给一个系统来返回
-        }
+        //Audio
+        fireAudio.Play(weaponSource);
+        //Anim
+        SetTrigger("Fire");
+        //PostProcess
+
     }
 
 

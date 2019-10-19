@@ -121,7 +121,7 @@ public class ActorController : MonoBehaviour
             {
                 if (userInput.attack)
                 {
-                    wc.SetTrigger("Fire");
+                    wc.FireOneShot();
                 }
             }
 
